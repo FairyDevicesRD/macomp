@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: golang:1.8.1
+
+    working_directory: /go/src/github.com/FairyDevicesRD/macomp
+
+    steps:
+        - run: 
+            command: |
+              apt-get -qq update
+              apt-get -y install mecab libmecab-dev
+        - checkout
+
+        - run:
+            name: preparation for golang
+            command: |
+                export CGO_LDFLAGS="`mecab-config --libs`"
+                export CGO_CFLAGS="-I`mecab-config --inc-dir`"
+                go get -t ./...
+                go get github.com/golang/lint/golint
+                go get github.com/fzipp/gocyclo
+                test -z "$($GOPATH/bin/golint ./... | tee /dev/stderr)"
+
+        - run:
+            name: golang test
+            command: |
+                gocyclo -over 15 .
+                go test ./...
+                go vet ./...
+                TMPDIR=`mktemp -d`
+                go build -o $TMPDIR/macomp -v ./cmd/macomp
+                go build -o $TMPDIR/macomp-server -v ./cmd/macomp-server
+                rm -rf $TMPDIR
+
+

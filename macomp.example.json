@@ -1,0 +1,26 @@
+{
+  "mecab-ipadic": {
+    "type" : "mecab",
+    "aliases" : ["jpppro"],
+    "options": {
+      "dicdir": "/path/to/mecab/dic/ipadic"
+    }
+  },
+  "mecab-jumandic": {
+    "type" : "mecab",
+    "aliases" : ["jumandic"],
+    "options": {
+      "dicdir": "/path/to/mecab/dic/jumandic"
+    }
+  },
+  "juman":{
+    "type" : "juman"
+  },
+
+  "jumanpp":{
+    "type" : "jumanpp",
+    "disable" : true,
+    "path" : "/path/to/jumanpp"
+  }
+
+}

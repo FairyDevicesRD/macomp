@@ -1,0 +1,90 @@
+#content {
+  margin: 1em;
+}
+body{
+  background:#627d4d;  
+  height:100%;
+  font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+.title {
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,0.68);
+  letter-spacing:-1px;
+  margin:0
+}
+.body {
+  margin-left: 1em;
+  padding: 0.1em 1em 0.1em 1em;
+  background:#728d5d;
+  opacity: 0.9;
+}
+
+#query{
+    font-size:1.2em;
+}
+input{
+    font-size:1.5em;
+}
+
+#resultView{
+    background: white;
+}
+
+.ma-result{
+    margin-top: 1em;
+}
+
+.char{
+    display: inline-block;
+    text-align: center;
+    width: 1.1em;
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+.border{
+    text-align: center;
+    width: 2px;
+    height: 1px;
+    font-size: 1.3em;
+    color:black;
+}
+.chars{
+/*    border-left: solid black 1px;*/
+/*    border-right: solid black 1px;*/
+/*    box-sizing: border-box;*/
+}
+
+.ma-status{
+width:20px;
+display:inline-block;
+text-align: center;
+}
+
+.ma-name{
+    width:100px;
+    float: left;
+}
+
+.ma-wakati{
+    float: left;
+}
+
+.ma-detail{
+    font-size:0.6em;
+    margin-left:120px;
+    clear : both;
+}
+
+.ma-pos{
+/*    width:20px;*/
+    font-size:0.7em;
+    text-align: center;
+    color:#686363;
+}
+
+.ma-surface{
+    width:5em;
+    display:inline-block;
+}
+
+
